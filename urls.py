@@ -8,14 +8,14 @@ url_species = url + '/00_data/data__species/'
 
 url_ensembl = "http://ftp.ensembl.org/pub/release-105/"
 
-Extension_FASTA = ".dna.toplevel.fa.gz"
-Extension_GTF = ".105.gtf.gz"
+Extension_FASTA = ".dna.toplevel.fa"
+Extension_GTF = ".105.gtf"
+Extension_FASTA_zip = ".dna.toplevel.fa.gz"
+Extension_GTF_zip = ".105.gtf.gz"
+
+
 
 ## 수정 필요
-
-
-
-
 
 
 

@@ -32,48 +32,48 @@ while True:
     else:
         print("The species does not exist. Please Re-input.")
 
-print(species_SN)
-print(species_EA)
+print("INPUT SPECIES Scientific_Name : " + species_SN)
+print("INPUT SPECIES Ensembl_Assembly : " + species_EA)
 
-# primary assembly > toplevel 
+# primary -> toplevel
 
-# 프라이머리 어셈블리가 있다면
-# 탑레벨이있다면
+### REFERENCE GENOME FILE or ZIP FILE
+file_rg = urls.url_species + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_FASTA
+file_rg_zip = urls.url_species + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_FASTA_zip
+if os.path.isfile(file_rg) or os.path.isfile(file_rg_zip):
+    if not os.path.isfile(file_rg): # Decompress fasta.gz
+        os.system('unpigz ' + file_rg_zip)
+else:
+    # Download fasta.gz
+    print("##### DOWNLOAD REFERENCE GENOME")
+    print("DOWNLOAD URL : " + urls.url_ensembl + 'fasta/' + species_SN.lower() + '/dna/' + species_SN + '.' + species_EA + urls.Extension_FASTA_zip)
+    os.system(
+        'wget'
+        + ' ' +
+        '-P ' + urls.url_species + species_SN + '/'
+        + ' ' + 
+        + urls.url_ensembl + 'fasta/' + species_SN.lower() + '/dna/' + species_SN + '.' + species_EA + urls.Extension_FASTA_zip
+    )
+    # Decompress fasta.gz
+    os.system('unpigz ' + file_rg_zip)
 
-# 일단 프라이머리 제외
-
-if os.path.isfile('/disk4/bicjh/rna_seq/00_data/data__species/' + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_FASTA):
-    print("파일이 이미 존재하므로 다운로드를 하지 않습니다.")
-
-## 압축파일, 압축해제파일 둘 중에 하나만 존재해도 다운로드 취소
-
-print("DOWNLOAD GENOME ASSEMBLY(DNA SEQUENCE) URL : ")
-print(urls.url_ensembl + 'fasta/' + species_SN.lower() + '/dna/' + species_SN + '.' + species_EA + urls.Extension_FASTA)
-# os.system(
-#     'wget'
-#     + ' ' +
-#     '-P ' + '/disk4/bicjh/rna_seq/00_data/data__species/' + species_SN + '/'
-#     + ' ' + 
-#     + url_main + 'fasta/' + species_SN.lower() + '/dna/' + species_SN + '.' + species_EA + Extension_FASTA
-# )
-
-# 압축해제 코드 ( 대신 다 다운로드 받은 뒤. ) pigz...
-os.system(
-    print('압축 파일 풀기')
-)
-
-if os.path.isfile('/disk4/bicjh/rna_seq/00_data/data__species/' + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_GTF):
-    print("파일이 이미 존재하므로 다운로드를 하지 않습니다.")
-
-print("DOWNLOAD GENE ANNOTATION URL : ") # 재정리...
-print(urls.url_ensembl + 'gtf/' + species_SN.lower() + '/' + species_SN + '.' + species_EA + urls.Extension_GTF)
-# os.system(
-#     'wget'
-#     + ' ' +
-#     '-P ' + '/disk4/bicjh/rna_seq/00_data/data__species/' + species_SN + '/'
-#     + ' ' + 
-#     + url_main + 'gtf/' + species_SN.lower() + '/' + species_SN + '.' + species_EA + Extension_GTF
-# )
+### GENE ANNOTATION FILE or ZIP FILE
+file_ga = urls.url_species + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_GTF
+file_ga_zip = urls.url_species + species_SN + '/' + species_SN + '.' + species_EA + urls.Extension_GTF_zip
+if os.path.isfile(file_ga) or os.path.isfile(file_ga_zip):
+    if not os.path.isfile(file_ga):
+        os.system('unpigz ' + file_ga_zip)
+else:
+    # Download gtf.gz
+    print("##### DOWNLOAD GENE ANNOTATION")
+    print("DOWNLOAD URL : " + urls.url_ensembl + 'gtf/' + species_SN.lower() + '/' + species_SN + '.' + species_EA + urls.Extension_GTF_zip)
+    os.system(
+        'wget'
+        + ' ' +
+        '-P ' + urls.url_species + species_SN + '/'
+        + ' ' + 
+        + urls.url_ensembl + 'gtf/' + species_SN.lower() + '/' + species_SN + '.' + species_EA + urls.Extension_GTF_zip
+    )
 
 # 01.Trimming
 
