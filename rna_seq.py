@@ -1,11 +1,14 @@
 import sys, os
 import pandas as pd
 import urls
+from func import download_sample
 sys.path.append('/disk4/bicjh/rna_seq/01_Trimmomatic/trimmomatic.py')
 sys.path.append('/disk4/bicjh/rna_seq/02_HISAT/HISAT.py')
+sys.path.append('/disk4/bicjh/rna_seq/03_FeatureCount/FeatureCount.py')
 
 from . import trimmomatic
 from . import HISAT
+from . import FeatureCount
 # import urllib3.request
 
 species_data = pd.read_csv("/disk4/bicjh/rna_seq/species.csv")
@@ -32,8 +35,8 @@ while True:
     else:
         print("The species does not exist. Please Re-input.")
 
-print("INPUT SPECIES Scientific_Name : " + species_name)
-print("INPUT SPECIES Ensembl_Assembly : " + species_code)
+print("SPECIES INPUT Scientific_Name : " + species_name)
+print("SPECIES INPUT Ensembl_Assembly : " + species_code)
 
 # primary -> toplevel
 
@@ -75,8 +78,16 @@ else:
         + urls.url_ensembl + 'gtf/' + species_name.lower() + '/' + species_name + '.' + species_code + urls.Extension_GTF_zip
     )
 
-# 01.Trimming
+sample_code = input("Input your sequencing sample code : ")
+# 샘플 있는지 없는 지 확인 그리고 폴더생성...
+download_sample(sample_code)
 
+### 전체 과정 들어가기전에 샘플 다운로드
+
+# 01.Trimming
+trimmomatic(sample_code)
 # 02.Hisat2
 
 # 03.FeatureCount
+
+# 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!
