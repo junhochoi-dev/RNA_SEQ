@@ -1,5 +1,6 @@
 ###  DATA FILES ###
-00_data/
+00_data/data__samples/
+00_data/data__species/
 
 ### __pycache__ ###
 /__pycache__
