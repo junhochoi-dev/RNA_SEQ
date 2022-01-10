@@ -86,6 +86,7 @@ download_sample(sample_code)
 
 # 01.Trimming
 trimmomatic(sample_code)
+
 # 02.Hisat2
 
 # 03.FeatureCount
