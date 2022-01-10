@@ -1,87 +1,51 @@
-*****
-
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-     &&&&&  &&    &  &&          &&&&&  &&&&&  &&&&&
-     &   &  & &   &  & &         &      &      &   &
-     &&&&&  &  &  &  &&&&   &&&  &&&&&  &&&&&  & & &
-     &  &   &   & &  &   &           &  &      &  &&
-     &   &  &    &&  &    &      &&&&&  &&&&&  &&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
-*****
-
 # RNA - SEQ
 
 *****
 
-## About RNA SEQUENCING
+### About RNA SEQUENCING
+
 >RNA-Seq(https://en.wikipedia.org/wiki/RNA-Seq) (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.
 
+>
+[reference] GEO DATASETS : https://www.ncbi.nlm.nih.gov/gds
+[reference] SRA RUN SELECTOR : https://www.ncbi.nlm.nih.gov/Traces/study/
+
 *****
 
-01. TRIMMING
+### 01. TRIMMING :: Trimmomatic
 
-* TRIMMOMATIC
+>TRIMMING [Trimmomatic] (http://www.usadellab.org/cms/?page=trimmomatic)
 Input 	: FastQ(forward, reverse) -> SAMPLE 
 output	: FastQ(forward, reverse X paired, unpaired)
 
 *****
 
-02. MAPPING (ALIGNMENT)
-HISAT2
+### 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
 
-FASTQ -> SAM
-Sequence Alignment data를 담고 있는 파일로 FASTQ 파일을 reference genome 등에 맵핑시킨 형태의 파일
+>INDEXING [HISAT2] (http://daehwankimlab.github.io/hisat2/manual/)
+Input 	: FASTA
+output	: 8 indexing files
 
-HISAT2를 이용하여 reference에 대한 인덱스 생성 -> 맵핑 속도를 빠르게 하기 위해 HISAT2-build 명령어를 통해 인덱스 생성
-02. INDEXING
-Input 	: 
-output	: 
-
-02.  FastQ -> SAM -> HISAT2
-Input 	: FastQ(forward, reverse) / Reference Genome(primary or toplevel)
+>FastQ -> SAM [HISAT2] (http://daehwankimlab.github.io/hisat2/manual/)
+Input 	: FastQ(forward, reverse) + Reference Genome(primary or toplevel)
 output	: SAM
 
-03. SAM -> BAM (sorted BAM) ->SAMTOOL 이용
+>SAM -> BAM [SAMTOOL] (http://www.htslib.org/doc/samtools.html)
 Input 	: SAM
-output	:
+output	: BAM
+
+>BAM -> sorted BAM [SAMTOOL] (http://www.htslib.org/doc/samtools.html)
+Input 	: BAM
+output	: sorted BAM
 
 *****
 
-03. QUANTIFICATION
-featureCounts
+### 03. QUANTIFICATION :: FeatureCount
 
-GEO DATASETS : https://www.ncbi.nlm.nih.gov/gds
-SRA RUN SELECTOR : https://www.ncbi.nlm.nih.gov/Traces/study/
-
-04. Quantification -> FeatureCount 이용
+>QUANTIFICATION [FeatureCount] (http://subread.sourceforge.net/)
 Input 	: BAM / Gene Annotation
-output	: 
+output	: result & result.summary
 
 *****
 
-RNA_SEQ
-
-01. Trimming (Paired End or Single End..?) -> Trimmomatic 
-Input 	: FastQ(forward, reverse) -> SAMPLE 
-output	: FastQ(forward, reverse X paired, unpaired)
-* 필요한 것은 paired만!
-
-01. & INDEXING
-Input 	: 
-output	: 
-
-02.  FastQ -> SAM -> HISAT2
-Input 	: FastQ(forward, reverse) / Reference Genome(primary or toplevel)
-output	: SAM
-
-03. SAM -> BAM (sorted BAM) ->SAMTOOL 이용
-Input 	: SAM
-output	:
-
-
-& 각 부분 별로 log 만들기
-성공 실패 여부 나누고.
-time 반영하고.
-
-마크다운 사용법 https://gist.github.com/ihoneymon/652be052a0727ad59601
+[reference] 마크다운 사용법 : https://gist.github.com/ihoneymon/652be052a0727ad59601
