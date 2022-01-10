@@ -6,6 +6,8 @@ url = "/disk4/bicjh/rna_seq"
 url_samples = url + '/00_data/data__samples/'
 url_species = url + '/00_data/data__species/'
 
+url_log = "/disk4/bicjh/rna_seq/00_data/log"
+
 url_ensembl = "http://ftp.ensembl.org/pub/release-105/"
 
 Extension_FASTA = ".dna.toplevel.fa"
@@ -20,7 +22,6 @@ Extension_GTF_zip = ".105.gtf.gz"
 
 
 url_data = "/disk4/bicjh/rna_seq/00_data"
-url_log = "/disk4/bicjh/rna_seq/00_data/log"
 
 
 # name -> download_# 바꾸자...

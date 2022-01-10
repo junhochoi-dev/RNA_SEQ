@@ -1,9 +1,7 @@
 import func
 
-# func.indexing('Homo_sapiens', 'GRCh38')
-
-# func.HISAT('Homo_sapiens', 'GRCh38', 'SRR14267546')
-
-# func.sambam('SRR14267546')
-
-func.sorted_bam('SRR14267546')
+def HISAT(species_name, species_code, sample_code):
+    func.indexing(species_name, species_code)
+    func.HISAT(species_name, species_code, sample_code)
+    func.sambam(sample_code)
+    func.sorted_bam(sample_code)
