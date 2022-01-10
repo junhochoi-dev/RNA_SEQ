@@ -1,3 +1,4 @@
 import func
 
-func.Quantification('Homo_sapiens', 'GRCh38', 'SRR14267546')
+def FeatureCount(species_name, species_code, sample_code):
+    func.Quantification(species_name, species_code, sample_code)

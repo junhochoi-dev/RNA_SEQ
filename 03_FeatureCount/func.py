@@ -6,7 +6,7 @@ def Quantification(species_name, species_code, sample_code):
     os.system(
         '/program/subread/bin/featureCounts -T 30 -p -s 0 -t exon -g gene_id -a' # -p paired end, -a annotation
         + ' ' + 
-        urls.url_species + species_name + '/' + species_name + '.' + species_code + '.105.gtf'
+        urls.url_species + species_name + '/' + species_name + '.' + species_code +urls.Extension_GTF
         + ' ' +
         '-o' # -o output
         + ' ' +

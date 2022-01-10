@@ -88,7 +88,9 @@ download_sample(sample_code)
 trimmomatic(sample_code)
 
 # 02.Hisat2
+HISAT(species_name, species_code, sample_code)
 
 # 03.FeatureCount
+FeatureCount(species_name, species_code, sample_code)
 
 # 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!

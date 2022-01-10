@@ -18,13 +18,7 @@ def indexing(species_name, species_code): # input = species reference genome
         urls.url_species + species_name + '/' + species_code
         )
 
-
-
-
-# 1. reference genome 2. gene annotation 3. hisat indexing files(ht files)
-# 4.SAM 기존의 샘플이 들어가니까 빼자 5. BAM 같은 폴더에 BAM 분류
-
-def HISAT(species_name, species_code, sample_code):
+def mapping(species_name, species_code, sample_code):
     os.system(
         # FASTQ -> SAM
         '/program/HISAT2/hisat2'
