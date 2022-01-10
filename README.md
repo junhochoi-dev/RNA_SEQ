@@ -6,7 +6,7 @@
 
 >[RNA-SEQ](https://en.wikipedia.org/wiki/RNA-Seq) (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.
 
-![RNASEQ](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13045-020-01005-x/MediaObjects/13045_2020_1005_Fig4_HTML.png?raw=true){: width="300" height="300"){: .center}
+![RNASEQ](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13045-020-01005-x/MediaObjects/13045_2020_1005_Fig4_HTML.png?raw=true)
 
 >
     [Reference]
