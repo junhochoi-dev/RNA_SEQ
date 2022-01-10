@@ -1,3 +1,5 @@
+*****
+
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
      &&&&&  &&    &  &&          &&&&&  &&&&&  &&&&&
      &   &  & &   &  & &         &      &      &   &
@@ -6,16 +8,25 @@
      &   &  &    &&  &    &      &&&&&  &&&&&  &&&&&&&
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+*****
+
 # RNA - SEQ
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*****
+
+## About RNA SEQUENCING
+>RNA-Seq(https://en.wikipedia.org/wiki/RNA-Seq) (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.
+
+*****
+
 01. TRIMMING
 
 * TRIMMOMATIC
 Input 	: FastQ(forward, reverse) -> SAMPLE 
 output	: FastQ(forward, reverse X paired, unpaired)
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*****
+
 02. MAPPING (ALIGNMENT)
 HISAT2
 
@@ -34,7 +45,9 @@ output	: SAM
 03. SAM -> BAM (sorted BAM) ->SAMTOOL 이용
 Input 	: SAM
 output	:
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+*****
+
 03. QUANTIFICATION
 featureCounts
 
@@ -44,7 +57,9 @@ SRA RUN SELECTOR : https://www.ncbi.nlm.nih.gov/Traces/study/
 04. Quantification -> FeatureCount 이용
 Input 	: BAM / Gene Annotation
 output	: 
-***********************************************************************
+
+*****
+
 RNA_SEQ
 
 01. Trimming (Paired End or Single End..?) -> Trimmomatic 
