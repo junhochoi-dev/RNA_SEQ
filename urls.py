@@ -2,6 +2,8 @@ from os import system
 
 # url 뒤에 다 / 붙여주자.
 
+url_program = '/program/'
+
 url = "/disk4/bicjh/rna_seq"
 url_samples = url + '/00_data/data__samples/'
 url_species = url + '/00_data/data__species/'

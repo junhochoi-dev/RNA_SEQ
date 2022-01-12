@@ -2,9 +2,15 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import urls
 
-def Quantification(species_name, species_code, sample_code):
+def Quantification(species_name, species_code, sample_code, thread_value):
     os.system(
-        '/program/subread/bin/featureCounts -T 30 -p -s 0 -t exon -g gene_id -a' # -p paired end, -a annotation
+        '/program/subread/bin/featureCounts'
+        + ' ' +
+        '-T'
+        + ' ' +
+        thread_value
+        + ' ' +
+        '-p -s 0 -t exon -g gene_id -a' # -p paired end, -a annotation
         + ' ' + 
         urls.url_species + species_name + '/' + species_name + '.' + species_code +urls.Extension_GTF
         + ' ' +
