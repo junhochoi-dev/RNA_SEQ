@@ -10,11 +10,7 @@ def indexing(species_name, species_code, thread_value): # input = species refere
     os.system(
         '/program/HISAT2/hisat2-build'
         + ' ' +
-        '-p'
-        + ' ' +
-        thread_value
-        # -p 쓰레드값 : 서버에 무리가 갈 수 있으니 적당히.. 30 안넘기게..
-        # -p : indexing 할 때 사용할 cpu 갯수 입니다.
+        '-p ' + thread_value # thread value
         + ' ' +
         urls.url_species + species_name + '/' + species_name + '.' + species_code + urls.Extension_FASTA
         + ' ' +
@@ -26,9 +22,7 @@ def mapping(species_name, species_code, sample_code, thread_value):
         # FASTQ -> SAM
         '/program/HISAT2/hisat2'
         + ' ' +
-        '-p'
-        + ' ' +
-        thread_value
+        '-p ' + thread_value # thread value
         + ' ' +
         '-x ' + urls.url_species + species_name + '/' + species_code # indexing files
         + ' ' +
@@ -46,9 +40,7 @@ def sambam(sample_code, thread_value):
 
         '/program/samtools/bin/samtools view -Sb'
         + ' ' +
-        '-@'
-        + ' ' +
-        thread_value
+        '-@ ' + thread_value # thread value
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.sam'
         + ' > ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
     )
@@ -59,9 +51,7 @@ def sorted_bam(sample_code, thread_value):
 
         '/program/samtools/bin/samtools sort'
         + ' ' +
-        '-@'
-        + ' ' +
-        thread_value
+        '-@ ' + thread_value # thread value
         + ' ' +
         '-o'
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
