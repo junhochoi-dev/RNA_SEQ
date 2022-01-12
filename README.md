@@ -39,7 +39,7 @@
 
 ##### FastQ -> SAM [HISAT2](http://daehwankimlab.github.io/hisat2/manual/)
 >
-    Input 	: FastQ(forward, reverse) + Reference Genome(primary or toplevel)
+    Input 	: FastQ(forward, reverse X paired) + Reference Genome(primary or toplevel)
     output	: SAM
 
 ##### SAM -> BAM [SAMTOOL](http://www.htslib.org/doc/samtools.html)
@@ -58,7 +58,7 @@
 
 ##### QUANTIFICATION [FeatureCounts](http://subread.sourceforge.net/)
 >
-    Input 	: BAM / Gene Annotation
+    Input 	: sorted BAM / Gene Annotation
     output	: result & result.summary
 
 *****
