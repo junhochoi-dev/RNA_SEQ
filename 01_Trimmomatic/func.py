@@ -10,7 +10,7 @@ import urls
 
 # paired end
 
-def trimming(sample_code):
+def trimming(sample_code, thread_value):
     print("TRIMMING 실행")
     sample_code_forward = sample_code + '_1'
     sample_code_reverse = sample_code + '_2'
@@ -18,9 +18,11 @@ def trimming(sample_code):
     os.system(
         'java -jar /program/Trimmomatic/trimmomatic-0.39.jar PE'
         + ' ' +
-        '-threads 30'
-        + ' '
+        '-threads' +
+        + ' ' +
+        thread_value
 
+        + ' '
         # + 'sample_code_forward.fq.gz sample_code_reverse.fq.gz'
         + '/disk4/bicjh/rna_seq/00_data/data__samples/' + sample_code + '/' + sample_code_forward + '.fastq.gz' + ' '
         + '/disk4/bicjh/rna_seq/00_data/data__samples/' + sample_code + '/' + sample_code_reverse + '.fastq.gz' + ' '

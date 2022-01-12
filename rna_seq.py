@@ -82,15 +82,22 @@ sample_code = input("Input your sequencing sample code : ")
 # 샘플 있는지 없는 지 확인 그리고 폴더생성...
 download_sample(sample_code)
 
+### thread 값입력
+while True:
+    thread_value = int(input("Input thread value to use(0 ~ 30) : "))
+    if thread_value > 0 and thread_value < 30:
+        break
+
 ### 전체 과정 들어가기전에 샘플 다운로드
 
 # 01.Trimming
-trimmomatic(sample_code)
+trimmomatic(sample_code, thread_value)
 
 # 02.Hisat2
-HISAT(species_name, species_code, sample_code)
+HISAT(species_name, species_code, sample_code, thread_value)
 
 # 03.FeatureCount
-FeatureCount(species_name, species_code, sample_code)
+FeatureCount(species_name, species_code, sample_code, thread_value)
 
 # 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!
+# thread 값 입력 후 조정.
