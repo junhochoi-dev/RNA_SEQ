@@ -17,11 +17,13 @@ Extension_GTF = ".105.gtf"
 Extension_FASTA_zip = ".dna.toplevel.fa.gz"
 Extension_GTF_zip = ".105.gtf.gz"
 
-
-
-## 수정 필요
-
-
+## 각 프로그램 툴 별로 url 지정
+# Trimming : /program/Trimmomatic/trimmomatic-0.39.jar
+# indexing : /program/HISAT2/hisat2-build
+# mapping : /program/HISAT2/hisat2
+# sam to bam : /program/samtools/bin/samtools
+# bam to sorted_bam : /program/samtools/bin/samtools
+# featurecount : /program/subread/bin/featureCounts
 
 url_data = "/disk4/bicjh/rna_seq/00_data"
 
