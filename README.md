@@ -1,8 +1,10 @@
+*****
+
 # RNA - SEQ
 
 *****
 
-### About RNA SEQUENCING
+## About RNA SEQUENCING
 
 >[RNA-SEQ](https://en.wikipedia.org/wiki/RNA-Seq) (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.
 
@@ -19,7 +21,7 @@
 
 *****
 
-### 01. TRIMMING :: Trimmomatic
+## 01. TRIMMING :: Trimmomatic
 
 ##### TRIMMING [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
 >
@@ -28,7 +30,7 @@
 
 *****
 
-### 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
+## 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
 
 ##### INDEXING [HISAT2](http://daehwankimlab.github.io/hisat2/manual/)
 >
@@ -52,7 +54,7 @@
 
 *****
 
-### 03. QUANTIFICATION :: FeatureCounts
+## 03. QUANTIFICATION :: FeatureCounts
 
 ##### QUANTIFICATION [FeatureCounts](http://subread.sourceforge.net/)
 >
