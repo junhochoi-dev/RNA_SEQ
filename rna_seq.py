@@ -85,7 +85,7 @@ download_sample(sample_code)
 ### thread 값입력
 while True:
     thread_value = int(input("Input thread value to use(0 ~ 30) : "))
-    if thread_value > 0 and thread_value < 30:
+    if thread_value > 0 and thread_value <= 30:
         break
 
 ### 전체 과정 들어가기전에 샘플 다운로드
