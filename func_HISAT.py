@@ -1,5 +1,4 @@
 import sys, os
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import urls
 
 def indexing(species_name, species_code, thread_value): # input = species reference genome

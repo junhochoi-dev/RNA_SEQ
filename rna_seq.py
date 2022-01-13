@@ -1,14 +1,11 @@
 import sys, os
 import pandas as pd
 import urls
-from func import download_sample
-sys.path.append('/disk4/bicjh/rna_seq/01_Trimmomatic/trimmomatic.py')
-sys.path.append('/disk4/bicjh/rna_seq/02_HISAT/HISAT.py')
-sys.path.append('/disk4/bicjh/rna_seq/03_FeatureCount/FeatureCount.py')
+import func__main
+import func_Trimmomatic
+import func_HISAT
+import func_FeatureCount
 
-from . import trimmomatic
-from . import HISAT
-from . import FeatureCount
 # import urllib3.request
 
 species_data = pd.read_csv("/disk4/bicjh/rna_seq/species.csv")
@@ -80,7 +77,7 @@ else:
 
 sample_code = input("Input your sequencing sample code : ")
 # 샘플 있는지 없는 지 확인 그리고 폴더생성...
-download_sample(sample_code)
+func__main.download_sample(sample_code)
 
 ### thread 값입력
 while True:
@@ -88,16 +85,20 @@ while True:
     if thread_value > 0 and thread_value <= 30:
         break
 
-### 전체 과정 들어가기전에 샘플 다운로드
-
 # 01.Trimming
-trimmomatic(sample_code, thread_value)
+func_Trimmomatic.trimming(sample_code, thread_value)
 
 # 02.Hisat2
-HISAT(species_name, species_code, sample_code, thread_value)
+func_HISAT.indexing(species_name, species_code, thread_value)
+func_HISAT.mapping(species_name, species_code, sample_code, thread_value)
+func_HISAT.sambam(sample_code, thread_value)
+func_HISAT.sorted_bam(sample_code, thread_value)
 
 # 03.FeatureCount
-FeatureCount(species_name, species_code, sample_code, thread_value)
+func_FeatureCount.quantification(species_name, species_code, sample_code, thread_value)
 
+
+# DEVELOP NOTE
+### 전체 과정 들어가기전에 샘플 다운로드
 # 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!
-# thread 값 입력 후 조정.
+# 영문 전환

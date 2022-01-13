@@ -1,8 +1,7 @@
 import sys, os
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import urls
 
-def Quantification(species_name, species_code, sample_code, thread_value):
+def quantification(species_name, species_code, sample_code, thread_value):
     os.system(
         '/program/subread/bin/featureCounts'
         + ' ' +

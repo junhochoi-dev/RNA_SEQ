@@ -5,10 +5,10 @@ from os import system
 url_program = '/program/'
 
 url = "/disk4/bicjh/rna_seq"
-url_samples = url + '/00_data/data__samples/'
-url_species = url + '/00_data/data__species/'
+url_samples = url + '/data/data__samples/'
+url_species = url + '/data/data__species/'
 
-url_log = "/disk4/bicjh/rna_seq/00_data/log"
+url_log = "/disk4/bicjh/rna_seq/data/log"
 
 url_ensembl = "http://ftp.ensembl.org/pub/release-105/"
 
@@ -25,7 +25,7 @@ Extension_GTF_zip = ".105.gtf.gz"
 # bam to sorted_bam : /program/samtools/bin/samtools
 # featurecount : /program/subread/bin/featureCounts
 
-url_data = "/disk4/bicjh/rna_seq/00_data"
+url_data = "/disk4/bicjh/rna_seq/data"
 
 
 # name -> download_# 바꾸자...
