@@ -7,6 +7,3 @@
 01_Trimmomatic/__pycache__
 02_HISAT/__pycache__
 03_FeatureCount/__pycache__
-
-### All Species Data ###
-species.csv
