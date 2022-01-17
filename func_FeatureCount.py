@@ -2,6 +2,7 @@ import sys, os
 import urls
 
 def quantification(species_name, species_code, sample_code, thread_value):
+    print("##### START QUANTIFICATION :: " + sample_code)
     os.system(
         '/program/subread/bin/featureCounts'
         + ' ' +
@@ -19,3 +20,4 @@ def quantification(species_name, species_code, sample_code, thread_value):
         + ' ' +
         urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
     )
+    print("##### END QUANTIFICATION :: " + sample_code)

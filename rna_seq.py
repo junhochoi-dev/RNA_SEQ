@@ -10,11 +10,11 @@ import func_FeatureCount
 
 species_data = pd.read_csv("/disk4/bicjh/rna_seq/species.csv")
 
-print("##############################")
-print("#                            #")
-print("# RNA SEQ _ AUTO PROGRAMMING #")
-print("#                            #")
-print("##############################")
+print("################################")
+print("##                            ##")
+print("## RNA SEQ _ AUTO PROGRAMMING ##")
+print("##                            ##")
+print("################################")
 
 while True:
     species_input = input("Input your sequencing sample species : ")
@@ -75,15 +75,16 @@ else:
         + urls.url_ensembl + 'gtf/' + species_name.lower() + '/' + species_name + '.' + species_code + urls.Extension_GTF_zip
     )
 
+### thread 값입력
+while True:
+    thread_value = int(input("Input thread value to use(0 ~ 30) : "))
+    if thread_value > 0 and thread_value <= 30:
+        thread_value = str(thread_value)
+        break
+
 sample_code = input("Input your sequencing sample code : ")
 # 샘플 있는지 없는 지 확인 그리고 폴더생성...
 func__main.download_sample(sample_code)
-
-### thread 값입력
-while True:
-    thread_value = input("Input thread value to use(0 ~ 30) : ")
-    if thread_value > 0 and thread_value <= 30:
-        break
 
 # 01.Trimming
 func_Trimmomatic.trimming(sample_code, thread_value)

@@ -2,6 +2,7 @@ import sys, os
 import urls
 
 def indexing(species_name, species_code, thread_value): # input = species reference genome
+    print("##### START INDEXING :: " + species_code)
     # ht2 파일 폴더 따로 지정 후 넣기...
 
     # 대부분 인덱싱한 파일의 명칭은 종 코드 번호로 한다..
@@ -15,8 +16,10 @@ def indexing(species_name, species_code, thread_value): # input = species refere
         + ' ' +
         urls.url_species + species_name + '/' + species_code
         )
+    print("##### END INDEXING :: " + species_code)
 
 def mapping(species_name, species_code, sample_code, thread_value):
+    print("##### START MAPPING :: " + species_code)
     os.system(
         # FASTQ -> SAM
         '/program/HISAT2/hisat2'
@@ -32,8 +35,10 @@ def mapping(species_name, species_code, sample_code, thread_value):
         '-S ' + urls.url_samples + sample_code + '/' + sample_code + '.sam'
         + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_HISAT_log' + '$log'
     )
+    print("##### END MAPPING :: " + species_code)
 
 def sambam(sample_code, thread_value):
+    print("##### START CONVERT SAM TO BAM :: " + sample_code)
     os.system(
         # SAM -> BAM 
 
@@ -43,8 +48,10 @@ def sambam(sample_code, thread_value):
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.sam'
         + ' > ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
     )
+    print("##### END CONVERT SAM TO BAM :: " + sample_code)
 
 def sorted_bam(sample_code, thread_value):
+    print("##### START CONVERT BAM TO SORTED BAM :: " + sample_code)
     os.system(
         # BAM -> SORTED BAM
 
@@ -56,3 +63,4 @@ def sorted_bam(sample_code, thread_value):
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
     )
+    print("##### END CONVERT BAM TO SORTED BAM :: " + sample_code)

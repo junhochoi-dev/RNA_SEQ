@@ -10,10 +10,10 @@ import urls
 # paired end
 
 def trimming(sample_code, thread_value):
-    print("TRIMMING 실행")
+    print("##### START TRIMMOMATIC :: " + sample_code)
     sample_code_forward = sample_code + '_1'
     sample_code_reverse = sample_code + '_2'
-    #os.system('mkdir ' + urls.url_log + '/' + sample_code + '/')
+    os.system('mkdir ' + urls.url_log + '/' + sample_code + '/')
     os.system(
         'java -jar /program/Trimmomatic/trimmomatic-0.39.jar PE'
         + ' ' +
@@ -37,5 +37,4 @@ def trimming(sample_code, thread_value):
         + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_Trimmomatic_log' + '$log'
     )
     
-
-trimming('SRR14267549', '30')
+    print("##### END TRIMMOMATIC :: " + sample_code)
