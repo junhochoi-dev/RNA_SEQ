@@ -103,3 +103,4 @@ func_FeatureCount.quantification(species_name, species_code, sample_code, thread
 # 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!
 # 영문 전환
 # 파일이 있을 시 이미 존재한다는 alert
+# SE PL 구분
