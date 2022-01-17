@@ -44,8 +44,11 @@ def sambam(sample_code, thread_value):
 
         '/program/samtools/bin/samtools view -Sb'
         + ' ' +
+
         '-@ ' + thread_value # thread value
-        + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.sam'
+        + ' ' + 
+        
+        urls.url_samples + sample_code + '/' + sample_code + '.sam'
         + ' > ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
     )
     print("##### END CONVERT SAM TO BAM :: " + sample_code)
@@ -57,8 +60,10 @@ def sorted_bam(sample_code, thread_value):
 
         '/program/samtools/bin/samtools sort'
         + ' ' +
+
         '-@ ' + thread_value # thread value
         + ' ' +
+
         '-o'
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
