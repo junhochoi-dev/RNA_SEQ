@@ -21,7 +21,7 @@
 
 *****
 
-## 01. TRIMMING :: Trimmomatic
+## 01. TRIMMING :: Trimmomatic [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_Trimmomatic.py)
 
 ##### TRIMMING [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
 >
@@ -30,7 +30,7 @@
 
 *****
 
-## 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
+## 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_HISAT.py)
 
 ##### INDEXING [HISAT2](http://daehwankimlab.github.io/hisat2/manual/)
 >
@@ -54,7 +54,7 @@
 
 *****
 
-## 03. QUANTIFICATION :: FeatureCounts
+## 03. QUANTIFICATION :: FeatureCounts [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_FeatureCount.py)
 
 ##### QUANTIFICATION [FeatureCounts](http://subread.sourceforge.net/)
 >
