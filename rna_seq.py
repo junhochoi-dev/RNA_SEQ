@@ -81,7 +81,7 @@ func__main.download_sample(sample_code)
 
 ### thread 값입력
 while True:
-    thread_value = int(input("Input thread value to use(0 ~ 30) : "))
+    thread_value = input("Input thread value to use(0 ~ 30) : ")
     if thread_value > 0 and thread_value <= 30:
         break
 
@@ -104,3 +104,5 @@ func_FeatureCount.quantification(species_name, species_code, sample_code, thread
 # 영문 전환
 # 파일이 있을 시 이미 존재한다는 alert
 # SE PL 구분
+# 실행중단되었을 시 Error try 처리
+# thread value string으로 안받을 시 에러 생긴다. -> to string으로 수정하자 -> int로 하지말자
