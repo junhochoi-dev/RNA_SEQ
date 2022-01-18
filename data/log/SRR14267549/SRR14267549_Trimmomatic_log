@@ -3,3 +3,5 @@ TrimmomaticPE: Started with arguments:
 Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
 ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 Quality encoding detected as phred33
+Input Read Pairs: 30918347 Both Surviving: 30875261 (99.86%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 43086 (0.14%)
+TrimmomaticPE: Completed successfully
