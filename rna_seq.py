@@ -108,5 +108,7 @@ func_FeatureCount.quantification(species_name, species_code, sample_code, thread
 # 실행중단되었을 시 Error try 처리
 # thread value string으로 안받을 시 에러 생긴다. -> to string으로 수정하자 -> int로 하지말자
 
+# 샘플 별 말고 따로 Trimmomatic Hisat 등등등 끼리...
+
 ## 터미널 모든 기록 log로 남기는것
 # https://medium.com/@jinnyjinnyjinjin/nohup-%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A1%9C-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0-d66cc85d4f9
