@@ -23,7 +23,7 @@ def trimming(sample_code, thread_value):
     result_forward_unpaired = urls.url_samples + sample_code + '/' + sample_code_forward + '_unpaired.fastq.gz'
     result_reverse_paired = urls.url_samples + sample_code + '/' + sample_code_reverse + '_paired.fastq.gz'
     result_reverse_unpaired = urls.url_samples + sample_code + '/' + sample_code_reverse + '_unpaired.fastq.gz'
-    if os.path.isfile(sample_forward_paired) and os.path.isfile(sample_forward_unpaired) and os.path.isfile(sample_reverse_paired) and os.path.isfile(sample_reverse_unpaired):
+    if os.path.isfile(result_forward_paired) and os.path.isfile(result_forward_unpaired) and os.path.isfile(result_reverse_paired) and os.path.isfile(result_reverse_unpaired):
         print("##### RESULT FILES ALREADY EXIST")
     else:
         os.system('mkdir ' + urls.url_log + '/' + sample_code + '/')
