@@ -21,3 +21,6 @@ def quantification(species_name, species_code, sample_code, thread_value):
         urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
     )
     print("##### END QUANTIFICATION :: " + sample_code)
+
+
+    #    + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_FeatureCount_log' + '$log'
