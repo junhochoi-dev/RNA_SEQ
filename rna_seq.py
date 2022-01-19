@@ -52,7 +52,7 @@ else:
         + ' ' +
         '-P ' + urls.url_species + species_name + '/'
         + ' ' + 
-        + urls.url_ensembl + 'fasta/' + species_name.lower() + '/dna/' + species_name + '.' + species_code + urls.Extension_FASTA_zip
+        urls.url_ensembl + 'fasta/' + species_name.lower() + '/dna/' + species_name + '.' + species_code + urls.Extension_FASTA_zip
     )
     # Decompress fasta.gz
     os.system('unpigz ' + file_rg_zip)
@@ -72,7 +72,7 @@ else:
         + ' ' +
         '-P ' + urls.url_species + species_name + '/'
         + ' ' + 
-        + urls.url_ensembl + 'gtf/' + species_name.lower() + '/' + species_name + '.' + species_code + urls.Extension_GTF_zip
+        urls.url_ensembl + 'gtf/' + species_name.lower() + '/' + species_name + '.' + species_code + urls.Extension_GTF_zip
     )
 
 ### thread 값입력
