@@ -2,9 +2,8 @@
 
 # RNA - SEQ
 
-*****
 
-## About RNA SEQUENCING
+## About RNA Sequencing...
 
 >[RNA-SEQ](https://en.wikipedia.org/wiki/RNA-Seq) (named as an abbreviation of RNA sequencing) is a sequencing technique which uses next-generation sequencing (NGS) to reveal the presence and quantity of RNA in a biological sample at a given moment, analyzing the continuously changing cellular transcriptome.
 
@@ -12,6 +11,7 @@
 
 >
     [Reference]
+    ENSEMBL             : https://asia.ensembl.org/index.html
     GEO DATASETS        : https://www.ncbi.nlm.nih.gov/gds
     SRA RUN SELECTOR    : https://www.ncbi.nlm.nih.gov/Traces/study/
     TRIMMOMATIC         : http://www.usadellab.org/cms/?page=trimmomatic
@@ -21,7 +21,7 @@
 
 *****
 
-## 01. TRIMMING :: Trimmomatic
+>## 01. TRIMMING :: Trimmomatic
 
 [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_Trimmomatic.py)
 
@@ -32,7 +32,7 @@
 
 *****
 
-## 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
+>## 02. MAPPING (ALIGNMENT) :: HISAT2 & SAMTOOL
 
 [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_HISAT.py)
 
@@ -58,7 +58,7 @@
 
 *****
 
-## 03. QUANTIFICATION :: FeatureCounts
+> ## 03. QUANTIFICATION :: FeatureCounts
 
 [..code](https://github.com/junhochoi-dev/RNA_SEQ/blob/main/func_FeatureCount.py)
 
@@ -66,6 +66,19 @@
 >
     Input 	: sorted BAM / Gene Annotation
     output	: result & result.summary
+
+*****
+
+> ## STUDY LIST
+
+1. ## Natural Mucosal Barriers and COVID-19 in Children
+
+    STUDY_CODE : GSE172274
+
+    SAMPLE_CODE : SRR14267546 - SRR14267560
+
+    [..link](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE172274)
+
 
 *****
 
