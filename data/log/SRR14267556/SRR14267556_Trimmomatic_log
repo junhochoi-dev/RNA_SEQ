@@ -1,0 +1,7 @@
+TrimmomaticPE: Started with arguments:
+ -threads 30 /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_1.fastq.gz /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_2.fastq.gz /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_1_paired.fastq.gz /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_1_unpaired.fastq.gz /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_2_paired.fastq.gz /disk4/bicjh/rna_seq/data/data__samples/SRR14267556/SRR14267556_2_unpaired.fastq.gz ILLUMINACLIP:/program/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 38763102 Both Surviving: 38729053 (99.91%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 34049 (0.09%)
+TrimmomaticPE: Completed successfully

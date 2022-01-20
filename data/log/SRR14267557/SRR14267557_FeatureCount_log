@@ -1,0 +1,52 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           o SRR14267557_sorted.bam                         ||
+||                                                                            ||
+||             Output file : SRR14267557_result.txt                           ||
+||                 Summary : SRR14267557_result.txt.summary                   ||
+||              Annotation : Homo_sapiens.GRCh38.105.gtf (GTF)                ||
+||      Dir for temp files : /disk4/bicjh/rna_seq/data/data__samples/SRR1 ... ||
+||                                                                            ||
+||                 Threads : 30                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : yes                                              ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+||          Chimeric reads : counted                                          ||
+||        Both ends mapped : not required                                     ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file Homo_sapiens.GRCh38.105.gtf ...                       ||
+||    Features : 1552026                                                      ||
+||    Meta-features : 61541                                                   ||
+||    Chromosomes/contigs : 47                                                ||
+||                                                                            ||
+|| Process BAM file SRR14267557_sorted.bam...                                 ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 38680335                                             ||
+||    Successfully assigned alignments : 12979300 (33.6%)                     ||
+||    Running time : 0.19 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "/disk4/bicjh/rna_seq/da  ||
+|| ta/data__samples/SRR14267557/SRR14267557_result.txt.summary"               ||
+||                                                                            ||
+\\============================================================================//
+
