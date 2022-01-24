@@ -69,3 +69,7 @@ def sorted_bam(sample_code, thread_value):
         + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
     )
     print("##### END CONVERT BAM TO SORTED BAM :: " + sample_code)
+
+    
+    ## 각 구간별로 파일 존재 시, 조건문으로 거르자.
+    # print("##### START TRIMMOMATIC :: " + sample_code)

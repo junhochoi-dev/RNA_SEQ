@@ -49,5 +49,4 @@ def trimming(sample_code, thread_value):
             'ILLUMINACLIP:/program/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36'
             + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_Trimmomatic_log' + '$log'
     )
-    
     print("##### END TRIMMOMATIC :: " + sample_code)
