@@ -103,7 +103,7 @@ func_FeatureCount.quantification(species_name, species_code, sample_code, thread
 ### 전체 과정 들어가기전에 샘플 다운로드
 # 모든 프로그램에서 변환이나 다운로드 전 파일 유무 확인!
 # 영문 전환
-# 파일이 있을 시 이미 존재한다는 alert
+# 파일이 있을 시 이미 존재한다는 alert -> indexing 파일 어떻게 처리할지.
 # SE PL 구분
 # 실행중단되었을 시 Error try 처리
 

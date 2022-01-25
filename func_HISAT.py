@@ -20,56 +20,65 @@ def indexing(species_name, species_code, thread_value): # input = species refere
 
 def mapping(species_name, species_code, sample_code, thread_value):
     print("##### START MAPPING :: " + species_code)
-    os.system(
-        # FASTQ -> SAM
-        '/program/HISAT2/hisat2'
-        + ' ' +
-        '-p ' + thread_value # thread value
-        + ' ' +
-        '-x ' + urls.url_species + species_name + '/' + species_code # indexing files
-        + ' ' +
-        '-1 ' + urls.url_samples + sample_code + '/' + sample_code + '_1_paired.fastq.gz' # forward
-        + ' ' +
-        '-2 ' + urls.url_samples + sample_code + '/' + sample_code + '_2_paired.fastq.gz' # reverse
-        + ' ' +
-        '-S ' + urls.url_samples + sample_code + '/' + sample_code + '.sam'
-        + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_HISAT_log' + '$log'
-    )
+    sam = urls.url_samples + sample_code + '/' + sample_code + '.sam'
+    if os.path.isfile(sam):
+        print("##### RESULT FILES ALREADY EXIST")
+    else:
+        os.system(
+            # FASTQ -> SAM
+            '/program/HISAT2/hisat2'
+            + ' ' +
+            '-p ' + thread_value # thread value
+            + ' ' +
+            '-x ' + urls.url_species + species_name + '/' + species_code # indexing files
+            + ' ' +
+            '-1 ' + urls.url_samples + sample_code + '/' + sample_code + '_1_paired.fastq.gz' # forward
+            + ' ' +
+            '-2 ' + urls.url_samples + sample_code + '/' + sample_code + '_2_paired.fastq.gz' # reverse
+            + ' ' +
+            '-S ' + sam
+            + ' 2>' + urls.url_log + '/' + sample_code + '/' + sample_code + '_HISAT_log' + '$log'
+        )
     print("##### END MAPPING :: " + species_code)
 
 def sambam(sample_code, thread_value):
     print("##### START CONVERT SAM TO BAM :: " + sample_code)
-    os.system(
-        # SAM -> BAM 
+    sam = urls.url_samples + sample_code + '/' + sample_code + '.sam'
+    bam = urls.url_samples + sample_code + '/' + sample_code + '.bam'
+    if os.path.isfile(bam):
+        print("##### RESULT FILES ALREADY EXIST")
+    else:
+        os.system(
+            # SAM -> BAM 
 
-        '/program/samtools/bin/samtools view -Sb'
-        + ' ' +
+            '/program/samtools/bin/samtools view -Sb'
+            + ' ' +
 
-        '-@ ' + thread_value # thread value
-        + ' ' + 
-        
-        urls.url_samples + sample_code + '/' + sample_code + '.sam'
-        + ' > ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
-    )
+            '-@ ' + thread_value # thread value
+            + ' ' + 
+            
+            sam + ' > ' + bam
+        )
     print("##### END CONVERT SAM TO BAM :: " + sample_code)
 
 def sorted_bam(sample_code, thread_value):
     print("##### START CONVERT BAM TO SORTED BAM :: " + sample_code)
-    os.system(
-        # BAM -> SORTED BAM
+    bam = urls.url_samples + sample_code + '/' + sample_code + '.bam'
+    sorted_bam = urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
+    if os.path.isfile(sorted_bam):
+        print("##### RESULT FILES ALREADY EXIST")
+    else:
+        os.system(
+            # BAM -> SORTED BAM
 
-        '/program/samtools/bin/samtools sort'
-        + ' ' +
+            '/program/samtools/bin/samtools sort'
+            + ' ' +
 
-        '-@ ' + thread_value # thread value
-        + ' ' +
+            '-@ ' + thread_value # thread value
+            + ' ' +
 
-        '-o'
-        + ' ' + urls.url_samples + sample_code + '/' + sample_code + '_sorted.bam'
-        + ' ' + urls.url_samples + sample_code + '/' + sample_code + '.bam'
-    )
+            '-o'
+            + ' ' + sorted_bam
+            + ' ' + bam
+        )
     print("##### END CONVERT BAM TO SORTED BAM :: " + sample_code)
-
-    
-    ## 각 구간별로 파일 존재 시, 조건문으로 거르자.
-    # print("##### START TRIMMOMATIC :: " + sample_code)
